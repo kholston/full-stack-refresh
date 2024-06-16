@@ -1,9 +1,23 @@
-const express = require('express')
+import express from 'express'
+import { routeHello, routeAPINames } from './routes.js'
+
 const server = express()
 const port = 3000
 
 server.get('/hello', function(req,res){
-    res.send('Hello world');
+    const response = routeHello(req,res)
+    res.send(response);
+})
+
+server.get('/api/names', async function(req,res) {
+    let response
+    try {
+        response = await routeAPINames(req,res)
+    } catch (error) {
+        console.log(error)
+    }
+    console.log('Here', response)
+    res.send(response)
 })
 
 server.listen(port, function(){
