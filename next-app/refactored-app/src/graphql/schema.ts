@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const typedefs = gql`
+export const typeDefs = gql`
     type LocationWeatherType {
         zip: String!
         weather: String!
