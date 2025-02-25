@@ -5,7 +5,7 @@ declare interface WeatherInterface {
     weather: string;
     tempC: string;
     tempF: string
-    friends: string;
+    friends: string[];
 }
 
 export const resolvers = {
